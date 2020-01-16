@@ -166,7 +166,7 @@ class matrix:
             temp_range: range = range(len(my_matrix[0]))
             for role in range(len(my_matrix)):
                 for element in temp_range:
-                    new_matrix[role][element] = my_matrix[role][target] - target[role][target]
+                    new_matrix[role][element] = my_matrix[role][element] - target[role][element]
             return new_matrix
         raise Exception('ERROR: illegal matrix size.')
 
@@ -177,7 +177,7 @@ class matrix:
             temp_range: range = range(len(my_matrix[0]))
             for role in range(len(my_matrix)):
                 for element in temp_range:
-                    new_matrix[role][element] = my_matrix[role][target] + target[role][target]
+                    new_matrix[role][element] = my_matrix[role][element] + target[role][element]
             return new_matrix
         raise Exception('ERROR: illegal matrix size.')
 
@@ -645,7 +645,12 @@ def command_prompt():
     print("For more information, type 'copyright()' or 'about()' in the console.\n")
     while True:
         try:
-            exec(input('\n>>>'))
+            input_value = input('\n>>>')
+            if input_value.find('=') == -1:
+                exec("print(" + input_value + ")")
+            else:
+                exec(input_value)
+                print('Done')
         except SystemExit:
             raise SystemExit
         except Exception as e:
@@ -659,3 +664,4 @@ if __name__ == '__main__':
     # Y = matrix.random_matrix(3, 3)
     # print(X * Y)
     # print(X.null_space())
+
