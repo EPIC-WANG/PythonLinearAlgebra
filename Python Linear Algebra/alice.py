@@ -467,8 +467,7 @@ input two matrices(only contain real elements)
     def __get_projection_matrix(my_matrix: list):
         pivot_index: list = matrix.__column_space(copy.deepcopy(my_matrix))
         my_matrix: list = [[my_matrix[row_count][column_count] for column_count in pivot_index] for row_count in
-                           range(len(
-                               my_matrix))]
+                           range(len(my_matrix))]
         # A * (A.transpose() * A).invert() * A.transpose()
         A_transpose: list = matrix.__transpose(copy.deepcopy(my_matrix))
         A_transpose_A = matrix.__multiply(copy.deepcopy(A_transpose), my_matrix)
@@ -501,8 +500,8 @@ input two matrices(only contain real elements)
         rtemp = A.transpose() * b
         solution_matrix = ltemp.combine(rtemp)
         solved_matrix = solution_matrix.gauss_jordan_elimination()
-        return f"\nleast square of {data} for y = Cx + D: \n C = {solved_matrix.matrix[0][-1]}," \
-               f" D = {solved_matrix.matrix[1][-1]} \n"
+        print(f"\nleast square of {data} for y = Cx + D: \n C = {solved_matrix.matrix[0][-1]},"
+              f" D = {solved_matrix.matrix[1][-1]} \n")
 
     """
     matrix creation
