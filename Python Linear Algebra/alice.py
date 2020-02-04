@@ -1,47 +1,48 @@
-ABOUT_CONTENT = """## This code implements part of the algorithm in Gilbert Strang's Introduction to Linear Algebra, 
-and it is completely written in Python. This software is relesed with Unlicense. 
 
-Unlicence licence:
+ABOUT_CONTENT = """
+This code implements part of the algorithm in GilbertStrang's Introduction
+to Linear Algebra.
 
-This is free and unencumbered software released into the public domain.
+This software is a free software, licensed under the GNU General Public License v3.0.
+There is also a 'Unlicensed' branch of this software,
 
-Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.
-
-In jurisdictions that recognize copyright laws, the author or authors
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
-
-For more information, please refer to <http://unlicense.org/>
+Please visit https://epic-wang.github.io/PythonLinearAlgebra/ for more infomation.
 """
 
 COPYRIGHT_CONTENT = """
-# Alice  Copyright (C) 2020  Weizheng Wang. This software is relesed with Unlicense. 
+Copyright (C) 2020  Weizheng Wang.
 
-NOTE:
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-For more information, please refer to <http://unlicense.org/>
+Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 print('loading, please wait.....', '\b' * 30, end='')
@@ -524,6 +525,25 @@ input two matrices(only contain real elements)
         print(f"\nleast square of {data} for y = Cx + D: \n C = {solved_matrix.matrix[0][-1]},"
               f" D = {solved_matrix.matrix[1][-1]} \n")
 
+    def to_vector(self, split_index: Union[range, list, tuple, set, frozenset, None] = None) -> list:
+        """
+        to split the given matrix to multiple vectors
+
+        @param split_index: determines the index of the matrix. If split_index is None, then the method will split all the
+        element in the matrix.
+
+        @return a list of vector object.
+        """
+        if split_index is None:
+            split_index = range(0, len(self.matrix[0]))
+        return [vector([row[index] for row in self.matrix]) for index in split_index]
+
+    def to_list(self):
+        return copy.deepcopy(self.matrix)
+
+    def to_str(self):
+        return str(self.matrix)
+
     """
     matrix creation
     """
@@ -564,6 +584,7 @@ input two matrices(only contain real elements)
         return return_matrix
 
     @staticmethod
+    # TODO: split the _type__ param into _is_complex_ and _type__.
     def random_matrix(row: int = 4, col: int = 4, max_: Union[float, int, complex] = 10,
                       min_: Union[float, int, complex] = 0, type_: Union[type, tuple] = int, seed: Any = None):
         if seed is not None:
@@ -593,24 +614,10 @@ input two matrices(only contain real elements)
         else:
             raise TypeError("only support int and float for random.")
 
-    def to_vector(self, split_index: Union[range, list, tuple, set, frozenset, None] = None) -> list:
-        """
-        to split the given matrix to multiple vectors
-
-        @param split_index: determines the index of the matrix. If split_index is None, then the method will split all the
-        element in the matrix.
-
-        @return a list of vector object.
-        """
-        if split_index is None:
-            split_index = range(0, len(self.matrix[0]))
-        return [vector([row[index] for row in self.matrix]) for index in split_index]
-
-    def to_list(self):
-        return copy.deepcopy(self.matrix)
-
-    def to_str(self):
-        return str(self.matrix)
+    @staticmethod
+    def random_vector(length: int = 3, max_: Union[float, int, complex] = 10,
+                      min_: Union[float, int, complex] = 0, type_: Union[type, tuple] = int, seed: Any = None):
+        return vector(matrix.random_matrix(length, 1, max_, min_, type_, seed).to_vector())
 
 
 class vector(matrix):
@@ -650,11 +657,6 @@ class vector(matrix):
 
     """other methods below"""
 
-    @staticmethod
-    def random_vector(length: int = 3, max_: Union[float, int, complex] = 10,
-                      min_: Union[float, int, complex] = 0, type_: Union[type, tuple] = int, seed: Any = None):
-        return vector(matrix.random_matrix(length, 1, max_, min_, type_, seed).to_vector())
-
     def to_matrix(self):
         return matrix(self.matrix)
 
@@ -690,7 +692,7 @@ def command_prompt():
             else:
                 exec(input_tempstr)
         except SystemExit:
-            raise SystemExit
+            sys.exit()
         except Exception as e:
             print(f"an error occurred during the execution, {e}")
 
