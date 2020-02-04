@@ -70,7 +70,7 @@ For more information, please refer to <http://unlicense.org/>
 ### 1. Install
 
 To install and run this software, enter the folder "Python Linear Algebra" (
-<https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/master/Python%20Linear%20Algebra>
+<https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/Unlicense/Python%20Linear%20Algebra>
 ) and download the file in python script.
 
 __NOTE: To run the script, a python3 interpreter (3.6 and above) is required.__
