@@ -265,7 +265,9 @@ Type: _Union[int, float, complex]_ are supported as elements in matrix.
 &nbsp;
 
 **Also, you could create a matrix with different types of element:**
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_2.svg)
+
 , type:
 ```python
 >>> theta = 2 * pi
@@ -273,7 +275,9 @@ Type: _Union[int, float, complex]_ are supported as elements in matrix.
 ```
 
 Or create: 
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_3.svg)
+
 , type (use j or J as complex part):
 ```python
 >>> A = matrix([[2+3j, 4+2j], [-1-2j, 3-4j]])
@@ -287,7 +291,9 @@ Or create:
 matrix has only one row.**
 
 For example:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_4.svg)
+
 , type:
 
 ```python
@@ -303,6 +309,7 @@ For example:
 to compute:
 
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_5.svg)
+
 , type:
 
 ```python
@@ -361,6 +368,7 @@ Return the size of the matrix.
 Return the null space of a matrix, returns a list of vector.
 
 To compute:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_6_1.svg)
 
 type:
@@ -390,8 +398,11 @@ perform a gauss jordan elimination and return the gauss jordan elimination
 matrix.
 
 to solve the equation set:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_8_1.svg)
+
 , transfer the equation set into matrix:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_8_2.svg)
 
 &nbsp;
@@ -433,13 +444,13 @@ matrix:
 
 return the column space (or the pivot column index) of the matrix.
 
-- **param:** _return_index_: return the index of the pivot column, the default
-value is False.
+- **param:** _return_index_: return the index of the pivot column, the 
+default value is False.
 
-- **return:** _matrix_ object when _return_index_ is False, otherwise _set_ object.
+- **return:** _matrix_ object when _return_index_ is False, otherwise 
+_set_ object.
 
 to compute:
-
 
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_10_1.svg)
 
@@ -461,7 +472,7 @@ type:
 
 &nbsp;
 
-11. `matrix.row_space(self, return_index: bool = False)`
+1.  `matrix.row_space(self, return_index: bool = False)`
 
 return the row space (or the pivot row index) of the matrix.
 
@@ -479,6 +490,7 @@ value is False.
 return the transpose matrix.
 
 to compute:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_12_1.svg)
 
 type:
@@ -501,6 +513,7 @@ return the invert of the matrix, if matrix couldn't be inverted, a message:
 _the matrix is singular. It is un invertible._ will be printed.
 
 to compute:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_13_1.svg)
 
 type:
@@ -524,9 +537,11 @@ Combine two matrices into one single matrix, the target matrix will appear at
 the right side of the given matrix.
 
 For example, combine X and Y:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_14_1.svg)
 
 The result is:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_14_2.svg)
 
 type:
@@ -552,9 +567,11 @@ create a complex matrix and map the complex part to _target_.
 part
 
 To map X and Y:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_15_1.svg)
 
 The result is:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_15_2.svg)
 
 type:
@@ -595,8 +612,11 @@ Return a square matrix with $\mathbb{R}^{(max(m, n) \times max(m,n))}$,
 extra columns or rows will be filled with 0.
 
 For example:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_18_1.svg)
+
 will be filled to:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_18_2.svg)
 
 &nbsp;
@@ -623,6 +643,7 @@ methods)
 orthogonal space $(I - P)$ of the target matrix.
 
 For example, to project matrix A on matrix X to get projected matrix p:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_20_1.svg)
 
 type:
@@ -650,6 +671,7 @@ compute the linear regression equation with the data list.
 - **return:** _None_ (the data will be printed in the console. )
 
 For example, to compute with the data set with ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_21_1_L.svg):
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_21_2.svg)
 
 type:
@@ -723,6 +745,7 @@ one column. You can input your vector as if inputting a single-column
 matrix. Or, you can use a pair of square brackets to represent a vector.
 
 For example, to input X:
+
 ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/v_1_1.svg)
 
 type:
