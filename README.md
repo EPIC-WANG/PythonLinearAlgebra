@@ -472,7 +472,7 @@ type:
 
 &nbsp;
 
-1.  `matrix.row_space(self, return_index: bool = False)`
+11.  `matrix.row_space(self, return_index: bool = False)`
 
 return the row space (or the pivot row index) of the matrix.
 
