@@ -1,7 +1,16 @@
 # PythonLinearAlgebra
 
+![](https://img.shields.io/badge/branch-GPL%20version-brightgreen.svg?style=flat-square)
+![](https://img.shields.io/badge/version-0.1.2_GPL-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/readme-0.1.2_GPL-yellow.svg?style=flat-square)
+![](https://img.shields.io/badge/last_update-2/4/2020-violet.svg?style=flat-square)
+
 This code implements part of the algorithm in Gilbert Strang's
 Introduction to Linear Algebra, and it is completely written in Python.
+
+This branch is the main branch (licensed under GNU GPLv3), which will be used
+for further development. To see the minor branch (The Unlicense branch), please
+go to https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/Unlicense.
 
 ------------------------------------------------------------
 
@@ -16,46 +25,64 @@ Introduction to Linear Algebra, and it is completely written in Python.
 
 ## INTRODUCTION
 
-I'm a high school student who is studying Linear Algebra with the
+I'm a high school student who was self-studying Linear Algebra with the
 Professor Gillbert Strang’s MIT OpenCourse. This is the code I used
 to practice linear algebra on.
 
 This code includes most linear algebra operations as well as a basic
 interactive command line that allows users to perform computations.
 
-To run this code, a python3 interpreter (3.6 and above) is required.
-And also, no 3rd library is used in this code.
-
 ------------------------------------------------------------
 
 ## Licence
 
-This software is licensed under the GNU General Public License v3.0
-
-Copyright (C) 2020  Weizheng Wang
+Copyright (C) 2020  Weizheng Wang.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+Disclaimer of Warranty.
+
+  THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY
+APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT
+HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY
+OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM
+IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+Limitation of Liability.
+
+  IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
+WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS
+THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY
+GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE
+USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF
+DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD
+PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),
+EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
+SUCH DAMAGES.
+
 
 You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+&nbsp;
 
 ------------------------------------------------------------
 
 ## Tutorial
 
-To run this software, enter the folder "Python Linear Algebra" (
-<https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/masterPython%20Linear%20Algebra>
-) and run the file in python script, .exe file or a pypy based executable
-file (recommended).
+### 1. Install
 
+To install and run this software, enter the folder "Python Linear Algebra" (
+<https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/GPL/Python%20Linear%20Algebra>
+) and download the file in python script.
+
+__NOTE: To run the script, a python3 interpreter (3.6 and above) is required.__
 &nbsp;
 
 Also, this code could be imported by other python scripts by using:
@@ -79,19 +106,19 @@ the console could accept python commands (a single line of code).
 
 &nbsp;
 
-### Next step, start compute
+### 2. Basic operations
 
-To create matrix or vector:
+1. To create matrix or vector:
 
 ```python
-# create a matrix
+# create a matrix, use list[list]
 X = matrix([[1,2,3],[2,3,4],[-1,-1,-1]])
 
 # X =  [ 1    2    3]
 #      [ 2    3    4]
 #      [-1   -1   -1]
 
-# create a vector
+# create a vector, use list
 Y = vector([1,2,3])
 
 # Y = 1i_hat + 2j_hat + 3k_hat
@@ -105,37 +132,42 @@ Y = vector([1,2,3])
 
 &nbsp;
 
-To perform basic operations:
+2. To perform basic operations with your matrices:
 
 ```python
+# multiply --
 X*Y  
 # matrix:
 #    [14]
 #    [20]
 #    [-6]
 
+# add --
 X+X
 # matrix:
 # [2, 4, 6]
 # [4, 6, 8]
 # [-2, -2, -2]
 
+# transpose --
 X.transpose()
 # matrix:
 # [1, 2, -1]
 # [2, 3, -1]
 # [3, 4, -1]
 
+# invert --
 X.invert()
 # the matrix is singular. It is uninvertible.
 
+# module (vector only) --
 Y.module()
 # 3.7416573867739413
 ```
 
 &nbsp;
 
-To generate a random matrix:
+3. To generate a random matrix:
 
 ```python
 # generate a 4*4 matrix, from 0 to 10, integer value
@@ -165,7 +197,7 @@ print(matrix.random_matrix(type_ = (complex, int), row = 3))
 
 &nbsp;
 
-To perform advanced operations:
+4. To perform advanced operations:
 
 ```python
 Z = matrix([[1,2,3],[2,3,4],[-1,-1,-1],[3,4,5]])
@@ -205,7 +237,8 @@ matrix.least_square([[1,2],[2,3],[4,4],[5,4]])
 
 ### Note
 
-1. these methods are recommended to use within basic computations
+1. these methods are recommended to use within basic computations. for
+more information, see the Note 
 
 2. all the methods, without notice, returns matrix (or vector) object.
 
@@ -227,17 +260,13 @@ to create a matrix, use matrix(_your_matrix_)
 Type: _Union[int, float, complex]_ are supported as elements in matrix.
 
 **For example, To create:**
-$$
-X = \begin{bmatrix}
-1 & 2 & 3\\
-2 & 3 & 4\\
-3 & 4 & 5
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_1.svg)
+
 , type:
 
 ```python
-X = matrix([[1,2,3],[2,3,4],[3,4,5]])
+>>> X = matrix([[1,2,3],[2,3,4],[3,4,5]])
 ```
 
 &nbsp;
@@ -245,30 +274,22 @@ X = matrix([[1,2,3],[2,3,4],[3,4,5]])
 &nbsp;
 
 **Also, you could create a matrix with different types of element:**
-$$
-T = \begin{bmatrix}
-cos(\theta) & -sin(\theta)\\
-sin(\theta) & cos(\theta)
-\end{bmatrix}
-\qquad 
-\theta = 2\pi
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_2.svg)
+
 , type:
 ```python
-theta = 2 * pi
-T = matrix([[cos(theta), -sin(theta)], [sin(theta), cos(theta)]])
+>>> theta = 2 * pi
+>>> T = matrix([[cos(theta), -sin(theta)], [sin(theta), cos(theta)]])
 ```
 
 Or create: 
-$$
-A = \begin{bmatrix}
-2+3i & 4+2i\\
--1-2i & 3-4i
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_3.svg)
+
 , type (use j or J as complex part):
 ```python
-A = matrix([[2+3j, 4+2j], [-1-2j, 3-4j]])
+>>> A = matrix([[2+3j, 4+2j], [-1-2j, 3-4j]])
 ```
 
 &nbsp;
@@ -279,15 +300,13 @@ A = matrix([[2+3j, 4+2j], [-1-2j, 3-4j]])
 matrix has only one row.**
 
 For example:
-$$
-X = \begin{bmatrix}
-3 & 4 & 5 & 6
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_4.svg)
+
 , type:
 
 ```python
-X = matrix([[3, 4, 5, 6]])
+>>> X = matrix([[3, 4, 5, 6]])
 ```
 
 &nbsp;
@@ -298,21 +317,12 @@ X = matrix([[3, 4, 5, 6]])
 
 to compute:
 
-$$
-\begin{bmatrix}
-1 & 2\\
-2 & 3\\
-3 & 4
-\end{bmatrix}
-\begin{bmatrix}
-5 & 4 & 3\\
-2 & 2 & 4
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_5.svg)
+
 , type:
 
 ```python
-matrix([[1,2],[2,3],[3,4]]) * matrix([[5,4,3],[2,2,4]])
+>>> matrix([[1,2],[2,3],[3,4]]) * matrix([[5,4,3],[2,2,4]])
 ```
 
 &nbsp;
@@ -321,7 +331,7 @@ matrix([[1,2],[2,3],[3,4]]) * matrix([[5,4,3],[2,2,4]])
 
 &nbsp;
 
-1. `matrix.get_value(self)`
+2. `matrix.get_value(self)`
 
 Return the _matrix_ object of the matrix variable.
 
@@ -332,7 +342,7 @@ _matrix()_.
 
 &nbsp;
 
-1. `matrix.get_row(self, row: int)`
+3. `matrix.get_row(self, row: int)`
 
 Return the selected row of the matrix (index starts with 0).
 
@@ -367,28 +377,8 @@ Return the size of the matrix.
 Return the null space of a matrix, returns a list of vector.
 
 To compute:
-$$
-N\left (
-{\begin{bmatrix}
-1 & 2 & 3\\
-2 & 3 & 4\\
-3 & 4 & 5\\
-1 & 1 & 1
-\end{bmatrix}}
-\right )=
-span\left (
-{\begin{bmatrix}
-1.0\\
--2.0\\
-1.0
-\end{bmatrix}}
-{\begin{bmatrix}
-0\\
-0\\
-0
-\end{bmatrix}}
-  \right )
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_6_1.svg)
 
 type:
 
@@ -417,21 +407,12 @@ perform a gauss jordan elimination and return the gauss jordan elimination
 matrix.
 
 to solve the equation set:
-$$
-\begin{cases}
- \ x+2y+3z=4 &\\
- \ 2x+3y+4z=6 &\\
- \ 3x+3y+3z=4
-\end{cases} \ x, y, z \in \mathbb{R}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_8_1.svg)
+
 , transfer the equation set into matrix:
-$$
-{\begin{bmatrix}
-1 & 2 & 3 & 4\\
-2 & 3 & 4 & 6\\
-3 & 3 & 3 & 4
-\end{bmatrix}}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_8_2.svg)
 
 &nbsp;
 
@@ -472,49 +453,16 @@ matrix:
 
 return the column space (or the pivot column index) of the matrix.
 
-- **param:** _return_index_: return the index of the pivot column, the default
-value is False.
+- **param:** _return_index_: return the index of the pivot column, the 
+default value is False.
 
-- **return:** _matrix_ object when _return_index_ is False, otherwise _set_ object.
+- **return:** _matrix_ object when _return_index_ is False, otherwise 
+_set_ object.
 
 to compute:
 
-$$
-C\left (
-{\begin{bmatrix}
-1 & 2 & 3 & 4\\
-2 & 3 & 4 & 6\\
-3 & 3 & 3 & 4\\
-3 & 4 & 5 & 6
-\end{bmatrix}}
-\right )=
-span\left (
-{\begin{bmatrix}
-1\\
-2\\
-3\\
-3
-\end{bmatrix}}
-{\begin{bmatrix}
-2\\
-3\\
-3\\
-4
-\end{bmatrix}}
-{\begin{bmatrix}
-4\\
-6\\
-4\\
-6
-\end{bmatrix}}
-{\begin{bmatrix}
-0\\
-0\\
-0\\
-0
-\end{bmatrix}}
-  \right )
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_10_1.svg)
+
 
 type:
 
@@ -533,7 +481,7 @@ type:
 
 &nbsp;
 
-11. `matrix.row_space(self, return_index: bool = False)`
+11.  `matrix.row_space(self, return_index: bool = False)`
 
 return the row space (or the pivot row index) of the matrix.
 
@@ -551,14 +499,8 @@ value is False.
 return the transpose matrix.
 
 to compute:
-$$
-\begin{bmatrix}
-1 & 2 & 3 & 4\\
-2 & 3 & 4 & 6\\
-3 & 3 & 3 & 4\\
-3 & 4 & 5 & 6
-\end{bmatrix}^T
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_12_1.svg)
 
 type:
 ```python
@@ -580,15 +522,8 @@ return the invert of the matrix, if matrix couldn't be inverted, a message:
 _the matrix is singular. It is un invertible._ will be printed.
 
 to compute:
-$$
-\begin{bmatrix}
-0 & 2 & 1 & 3\\
-2 & 2 & 6 & 4\\
-3 & 4 & 3 & 4\\
-3 & 4 & 7 & 6
-\end{bmatrix}
-^{-1}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_13_1.svg)
 
 type:
 
@@ -611,29 +546,12 @@ Combine two matrices into one single matrix, the target matrix will appear at
 the right side of the given matrix.
 
 For example, combine X and Y:
-$$
-X =
-\begin{bmatrix}
-1 & 1 & 3\\
-2 & 2 & 4\\
-3 & 4 & 3
-\end{bmatrix}
-, Y=
-\begin{bmatrix}
-4 & 3 & 3\\
-3 & 2 & 3\\
-2 & 1 & 3
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_14_1.svg)
 
 The result is:
-$$
-\begin{bmatrix}
-1 & 1 & 3 & 4 & 3 & 3\\
-2 & 2 & 4 & 3 & 2 & 3\\
-3 & 4 & 3 & 2 & 1 & 3
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_14_2.svg)
 
 type:
 
@@ -658,29 +576,12 @@ create a complex matrix and map the complex part to _target_.
 part
 
 To map X and Y:
-$$
-X =
-\begin{bmatrix}
-1 & 1 & 3\\
-2 & 2 & 4\\
-3 & 4 & 3
-\end{bmatrix}
-, Y=
-\begin{bmatrix}
-4 & 3 & 3\\
-3 & 2 & 3\\
-2 & 1 & 3
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_15_1.svg)
 
 The result is:
-$$
-\begin{bmatrix}
-1+4i & 1+3i & 3+3i \\
-2+3i & 2+2i & 4+3i \\
-3+2i & 4+i & 3+3i
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_15_2.svg)
 
 type:
 
@@ -709,37 +610,23 @@ Return the conjugate matrix of the given matrix.
 
 Return the conjugate transpose matrix of the given matrix. it is same as 
 `X.transpose().conjugate()`.
-$$
-A^H \equiv \bar{A}^T
-$$
 
 &nbsp;
 
 &nbsp;
 
-18. `matrix.round_to_square_matrix(self)`
+18.  `matrix.round_to_square_matrix(self)`
 
 Return a square matrix with $\mathbb{R}^{(max(m, n) \times max(m,n))}$, 
 extra columns or rows will be filled with 0.
 
 For example:
-$$
-\begin{bmatrix}
-1 & 1 \\
-2 & 2 \\
-3 & 4 \\
-4 & 5
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_18_1.svg)
+
 will be filled to:
-$$
-\begin{bmatrix}
-1 & 1 & 0 & 0 \\
-2 & 2 & 0 & 0 \\
-3 & 4 & 0 & 0 \\
-4 & 5 & 0 & 0
-\end{bmatrix}
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_18_2.svg)
 
 &nbsp;
 
@@ -748,7 +635,7 @@ $$
 19. `matrix.get_projection_matrix(self)`
 
 Return the projection matrix of a given matrix, This method uses 
-$P = A (A^TA)^{-1} A^T$ to produce the projection matrix. 
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_19_1.svg) to produce the projection matrix. 
 
 &nbsp;
 
@@ -765,32 +652,8 @@ methods)
 orthogonal space $(I - P)$ of the target matrix.
 
 For example, to project matrix A on matrix X to get projected matrix p:
-$$
-A =     \begin{bmatrix}
-        1 & 1 & 2 & 5 \\
-        2 & 2 & 3 & 3 \\
-        3 & 4 & 4 & 8 \\
-        4 & 5 & 5 & 1
-        \end{bmatrix}
 
-\qquad 
-
-X =     \begin{bmatrix}
-        1 & 2 & 1 & 3 \\
-        2 & 3 & 1 & 4 \\
-        3 & 4 & 1 & 2 \\
-        4 & 5 & 1 & 7
-        \end{bmatrix}
-$$
-
-$$
-p =     \begin{bmatrix}
-        1.0 & 0.8444444444 & 2.0 & 4.4944444444]\\
-        2.0 & 2.2444444444 & 3.0 & 3.7944444444]\\
-        3.0 & 3.9777777778 & 4.0 & 7.9277777778]\\
-        4.0 & 4.9333333333 & 5.0 & 0.7833333333]
-        \end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_20_1.svg)
 
 type:
 ```python
@@ -816,10 +679,9 @@ compute the linear regression equation with the data list.
 
 - **return:** _None_ (the data will be printed in the console. )
 
-For example, to compute with the data set with $y = Cx + D$:
-$$
-X = (1,2); (2,3); (3,3); (4,6); (5,7)
-$$
+For example, to compute with the data set with ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_21_1_L.svg):
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_21_2.svg)
 
 type:
 ```python
@@ -885,21 +747,184 @@ For example:
 
 &nbsp;
 
-1. `vector(matrix)`
+1. `vector()`
 
+To create a vector, input `vector(_your_vector_)`. A vector only contains 
+one column. You can input your vector as if inputting a single-column 
+matrix. Or, you can use a pair of square brackets to represent a vector.
 
+For example, to input X:
 
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/v_1_1.svg)
 
+type:
+```python
+>>> X = vector([[1],[2],[3],[4]])
+# or using a better way:
+>>> X = vector([1, 2, 3, 4])
+```
+
+All the _vector_ element could perform the operations in class _matrix_.
+
+&nbsp;
+
+&nbsp;
+
+1. `vector.dot(self, target)`
+
+return the dot product of two vectors. 
+
+- **param:** _target_: the target vector.
+
+- **return:** Result of the dot operation. a _int_ or _float_ object.
+
+Note: the result is same as _your_matrix_.transpose() * _target_.
+
+&nbsp;
+
+&nbsp;
+
+2. `vector.module(self)`
+
+return the module (length) of the vector. 
+
+- **return:** a _int_ or _float_ object. 
+
+&nbsp;
 
 &nbsp;
 
 ------------------------------------------------------------
-### Note
 
-1. All private and static method (starts with __ ) will overwrite the
-input matrix which indicates the parameter 'my_matrix'. If you want
-to remain the matrix unchanged, please use copy.deepcopy() or call the 
-methods by `<class '__main__.matrix'>` object.
+#### The matrices spanner APIs:
+
+&nbsp;
+
+Note: all the matrices spanner methods are ___static___.
+
+&nbsp;
+
+&nbsp;
+
+1. `matrix.identity_matrix(size)`
+
+Generate and return a identity matrix with size _size_ * _size_.
+
+- **param:** _size_: the size of the identity matrix. type _int_.
+
+&nbsp;
+
+&nbsp;
+
+2. `matrix.zero_matrix(size)`
+
+Generate and return a zero matrix with size _size_ * _size_.
+
+- **param:** _size_: the size of the identity matrix. type _int_.
+
+&nbsp;
+
+&nbsp;
+
+3. `matrix.random_matrix(row, col, max_, min_, type_, seed)`
+
+Generate and return a random matrix with size _row_ * _col_. 
+
+- **param:** _row_: the row count of the random matrix. type: _int_,
+default: _4_.
+
+- **param:** _column_: the column count of the random matrix. type: _int_,
+default: _4_.
+
+- **param:** _max__: the max random value of the random matrix. type: 
+_Union[float, int, complex]_, default: _10_.
+
+- **param:** _min__: the min random value of the random matrix. type: 
+_Union[float, int, complex]_, default: _0_.
+
+- **param:** _type__: the type of the generate matrix. type:
+_Union[type, tuple]_. To generate a real matrix, use _type_, 
+otherwise use (_complex_, _type_). default: _int_.
+
+- **param:** _seed_: the seed of the generator. Type: _Any_, default: 
+_None_, (random choose a seed).
+
+**NOTE:** 
+If the matrix is a complex matrix, max \ min random value will be set 
+based on the complex and the real part of param _max__ \ _min__ (if the 
+type of _max__ \ _min__ is complex) or the complex and the real part 
+are both param _max__ \ _min__ (if the type of _max__ is float or int). 
+
+To generate a random matrix: 
+
+```python
+# a default matrix
+>>> print(matrix.random_matrix())
+matrix:
+[2, 2, 3, 1]
+[1, 6, 10, 2]
+[1, 1, 0, 1]
+[3, 5, 3, 9]
+
+# a floating point matrix with 6 rows and 7 columns, max: 10, min: -10
+>>> print(matrix.random_matrix(6, 7, 10, -10, float))
+matrix:
+[3.8615808488, 1.2674775011, 4.847243793, -1.0016590897, -9.4858038654, -0.8995657768, 9.3097633389]
+[-1.660605956, 8.8394380788, 9.2824632231, -8.4695465347, -6.041755394, 4.2838418496, 5.0610248363]
+[9.8594147713, -7.4514601363, 8.2789013583, 4.504841112, -6.3012155999, -0.6093246257, 3.923953555]
+[-5.4559652587, -0.3480076003, 3.8279018731, 3.4219349079, 6.7735594802, -5.6834095914, -3.3381249527]        
+[0.5948846068, -9.3837370141, -4.5305839598, 0.5697977751, 5.9328243528, -5.7344232839, -1.3426753349]        
+[-0.5584473399, -1.3399297884, -1.5035082544, 2.665211314, 4.4190972648, 4.3496340898, -7.7298254901]
+
+# a complex integer matrix with 5 rows and 5 columns, max real part: 2
+# max complex part: 3, min real part: -1, min complex part: 1 
+>>> print(matrix.random_matrix(5, 5, 2+3j, -1+j, type_ =  (complex, int)))  
+matrix:
+[(1+3j), (2+2j), (1+2j), 3j, 2j]
+[(1+2j), (1+1j), (2+3j), (2+2j), (2+3j)]
+[(1+2j), 2j, (1+2j), 3j, (-1+2j)]
+[(-1+3j), (1+2j), (2+1j), 1j, (-1+2j)]
+[(-1+1j), (2+3j), (2+2j), (-1+3j), (-1+3j)]
+```
+
+&nbsp;
+
+&nbsp;
+
+4. `matrix.random_vector(length, max_, min_, type_, seed):`
+
+generate a random vector with length _length_.
+
+- **param:** _length_: the length of the random vector. type: _int_,
+default: _3_.
+
+- **param:** _max__: the max random value of the random vector. type: 
+_Union[float, int, complex]_, default: _10_.
+
+- **param:** _min__: the min random value of the random vector. type: 
+_Union[float, int, complex]_, default: _0_.
+
+- **param:** _type__: the type of the generate vector. type:
+_Union[type, tuple]_. To generate a real vector, use _type_, 
+otherwise use (_complex_, _type_). default: _int_.
+
+- **param:** _seed_: the seed of the generator. Type: _Any_, default: 
+_None_, (random choose a seed).
+
+**NOTE:**
+The param: _max__ and _min__ is same as `matrix.random_matrix()`
+
+&nbsp;
+
+&nbsp;
+
+------------------------------------------------------------
+### Private methods
+
+1. All private and static methods (starts with __ ) will overwrite the
+input matrix which indicates with the parameter _my_matrix_. If you want
+to remain the matrix unchanged, please use `copy.deepcopy(my_matrix)` 
+or call the methods by `<class '__main__.matrix'>` object.
 
 2. It is recommend to call static methods in `<class '__main__.matrix'>`
 if you decide to perform intense computing or to build methods inside
