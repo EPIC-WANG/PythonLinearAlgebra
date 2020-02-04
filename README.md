@@ -8,8 +8,6 @@
 This code implements part of the algorithm in Gilbert Strang's
 Introduction to Linear Algebra, and it is completely written in Python.
 
-This document only 
-
 ------------------------------------------------------------
 
 ## CATALOG
@@ -254,15 +252,8 @@ Type: _Union[int, float, complex]_ are supported as elements in matrix.
 
 **For example, To create:**
 
-![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_10_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_1.svg)
 
-$$
-X = \begin{bmatrix}
-1 & 2 & 3\\
-2 & 3 & 4\\
-3 & 4 & 5
-\end{bmatrix}
-$$
 , type:
 
 ```python
@@ -274,14 +265,7 @@ $$
 &nbsp;
 
 **Also, you could create a matrix with different types of element:**
-$$
-T = \begin{bmatrix}
-cos(\theta) & -sin(\theta)\\
-sin(\theta) & cos(\theta)
-\end{bmatrix}
-\qquad 
-\theta = 2\pi
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_2.svg)
 , type:
 ```python
 >>> theta = 2 * pi
@@ -289,12 +273,7 @@ $$
 ```
 
 Or create: 
-$$
-A = \begin{bmatrix}
-2+3i & 4+2i\\
--1-2i & 3-4i
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_3.svg)
 , type (use j or J as complex part):
 ```python
 >>> A = matrix([[2+3j, 4+2j], [-1-2j, 3-4j]])
@@ -308,11 +287,7 @@ $$
 matrix has only one row.**
 
 For example:
-$$
-X = \begin{bmatrix}
-3 & 4 & 5 & 6
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_4.svg)
 , type:
 
 ```python
@@ -327,17 +302,7 @@ $$
 
 to compute:
 
-$$
-\begin{bmatrix}
-1 & 2\\
-2 & 3\\
-3 & 4
-\end{bmatrix}
-\begin{bmatrix}
-5 & 4 & 3\\
-2 & 2 & 4
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_1_5.svg)
 , type:
 
 ```python
@@ -350,7 +315,7 @@ $$
 
 &nbsp;
 
-1. `matrix.get_value(self)`
+2. `matrix.get_value(self)`
 
 Return the _matrix_ object of the matrix variable.
 
@@ -396,28 +361,7 @@ Return the size of the matrix.
 Return the null space of a matrix, returns a list of vector.
 
 To compute:
-$$
-N\left (
-{\begin{bmatrix}
-1 & 2 & 3\\
-2 & 3 & 4\\
-3 & 4 & 5\\
-1 & 1 & 1
-\end{bmatrix}}
-\right )=
-span\left (
-{\begin{bmatrix}
-1.0\\
--2.0\\
-1.0
-\end{bmatrix}}
-{\begin{bmatrix}
-0\\
-0\\
-0
-\end{bmatrix}}
-  \right )
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_6_1.svg)
 
 type:
 
@@ -446,21 +390,9 @@ perform a gauss jordan elimination and return the gauss jordan elimination
 matrix.
 
 to solve the equation set:
-$$
-\begin{cases}
- \ x+2y+3z=4 &\\
- \ 2x+3y+4z=6 &\\
- \ 3x+3y+3z=4
-\end{cases} \ x, y, z \in \mathbb{R}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_8_1.svg)
 , transfer the equation set into matrix:
-$$
-{\begin{bmatrix}
-1 & 2 & 3 & 4\\
-2 & 3 & 4 & 6\\
-3 & 3 & 3 & 4
-\end{bmatrix}}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_8_2.svg)
 
 &nbsp;
 
@@ -508,42 +440,9 @@ value is False.
 
 to compute:
 
-$$
-C\left (
-{\begin{bmatrix}
-1 & 2 & 3 & 4\\
-2 & 3 & 4 & 6\\
-3 & 3 & 3 & 4\\
-3 & 4 & 5 & 6
-\end{bmatrix}}
-\right )=
-span\left (
-{\begin{bmatrix}
-1\\
-2\\
-3\\
-3
-\end{bmatrix}}
-{\begin{bmatrix}
-2\\
-3\\
-3\\
-4
-\end{bmatrix}}
-{\begin{bmatrix}
-4\\
-6\\
-4\\
-6
-\end{bmatrix}}
-{\begin{bmatrix}
-0\\
-0\\
-0\\
-0
-\end{bmatrix}}
-  \right )
-$$
+
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_10_1.svg)
+
 
 type:
 
@@ -580,14 +479,7 @@ value is False.
 return the transpose matrix.
 
 to compute:
-$$
-\begin{bmatrix}
-1 & 2 & 3 & 4\\
-2 & 3 & 4 & 6\\
-3 & 3 & 3 & 4\\
-3 & 4 & 5 & 6
-\end{bmatrix}^T
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_12_1.svg)
 
 type:
 ```python
@@ -609,15 +501,7 @@ return the invert of the matrix, if matrix couldn't be inverted, a message:
 _the matrix is singular. It is un invertible._ will be printed.
 
 to compute:
-$$
-\begin{bmatrix}
-0 & 2 & 1 & 3\\
-2 & 2 & 6 & 4\\
-3 & 4 & 3 & 4\\
-3 & 4 & 7 & 6
-\end{bmatrix}
-^{-1}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_13_1.svg)
 
 type:
 
@@ -640,29 +524,10 @@ Combine two matrices into one single matrix, the target matrix will appear at
 the right side of the given matrix.
 
 For example, combine X and Y:
-$$
-X =
-\begin{bmatrix}
-1 & 1 & 3\\
-2 & 2 & 4\\
-3 & 4 & 3
-\end{bmatrix}
-, Y=
-\begin{bmatrix}
-4 & 3 & 3\\
-3 & 2 & 3\\
-2 & 1 & 3
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_14_1.svg)
 
 The result is:
-$$
-\begin{bmatrix}
-1 & 1 & 3 & 4 & 3 & 3\\
-2 & 2 & 4 & 3 & 2 & 3\\
-3 & 4 & 3 & 2 & 1 & 3
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_14_2.svg)
 
 type:
 
@@ -687,29 +552,10 @@ create a complex matrix and map the complex part to _target_.
 part
 
 To map X and Y:
-$$
-X =
-\begin{bmatrix}
-1 & 1 & 3\\
-2 & 2 & 4\\
-3 & 4 & 3
-\end{bmatrix}
-, Y=
-\begin{bmatrix}
-4 & 3 & 3\\
-3 & 2 & 3\\
-2 & 1 & 3
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_15_1.svg)
 
 The result is:
-$$
-\begin{bmatrix}
-1+4i & 1+3i & 3+3i \\
-2+3i & 2+2i & 4+3i \\
-3+2i & 4+i & 3+3i
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_15_2.svg)
 
 type:
 
@@ -738,37 +584,20 @@ Return the conjugate matrix of the given matrix.
 
 Return the conjugate transpose matrix of the given matrix. it is same as 
 `X.transpose().conjugate()`.
-$$
-A^H \equiv \bar{A}^T
-$$
 
 &nbsp;
 
 &nbsp;
 
-18. `matrix.round_to_square_matrix(self)`
+18.  `matrix.round_to_square_matrix(self)`
 
 Return a square matrix with $\mathbb{R}^{(max(m, n) \times max(m,n))}$, 
 extra columns or rows will be filled with 0.
 
 For example:
-$$
-\begin{bmatrix}
-1 & 1 \\
-2 & 2 \\
-3 & 4 \\
-4 & 5
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_18_1.svg)
 will be filled to:
-$$
-\begin{bmatrix}
-1 & 1 & 0 & 0 \\
-2 & 2 & 0 & 0 \\
-3 & 4 & 0 & 0 \\
-4 & 5 & 0 & 0
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_18_2.svg)
 
 &nbsp;
 
@@ -777,7 +606,7 @@ $$
 19. `matrix.get_projection_matrix(self)`
 
 Return the projection matrix of a given matrix, This method uses 
-$P = A (A^TA)^{-1} A^T$ to produce the projection matrix. 
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_19_1.svg) to produce the projection matrix. 
 
 &nbsp;
 
@@ -794,32 +623,7 @@ methods)
 orthogonal space $(I - P)$ of the target matrix.
 
 For example, to project matrix A on matrix X to get projected matrix p:
-$$
-A =     \begin{bmatrix}
-        1 & 1 & 2 & 5 \\
-        2 & 2 & 3 & 3 \\
-        3 & 4 & 4 & 8 \\
-        4 & 5 & 5 & 1
-        \end{bmatrix}
-\qquad 
-X =     \begin{bmatrix}
-        1 & 2 & 1 & 3 \\
-        2 & 3 & 1 & 4 \\
-        3 & 4 & 1 & 2 \\
-        4 & 5 & 1 & 7
-        \end{bmatrix}
-
-\\
-\quad
-\\
-
-p =     \begin{bmatrix}
-        1.0 & 0.8444444444 & 2.0 & 4.4944444444\\
-        2.0 & 2.2444444444 & 3.0 & 3.7944444444\\
-        3.0 & 3.9777777778 & 4.0 & 7.9277777778\\
-        4.0 & 4.9333333333 & 5.0 & 0.7833333333
-        \end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_20_1.svg)
 
 type:
 ```python
@@ -845,10 +649,8 @@ compute the linear regression equation with the data list.
 
 - **return:** _None_ (the data will be printed in the console. )
 
-For example, to compute with the data set with $y = Cx + D$:
-$$
-X = (1,2); (2,3); (3,3); (4,6); (5,7)
-$$
+For example, to compute with the data set with ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_21_1_L.svg):
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/m_21_2.svg)
 
 type:
 ```python
@@ -921,15 +723,7 @@ one column. You can input your vector as if inputting a single-column
 matrix. Or, you can use a pair of square brackets to represent a vector.
 
 For example, to input X:
-$$
-X = 
-\begin{bmatrix}
-1\\
-2\\
-3\\
-4
-\end{bmatrix}
-$$
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/master/README_IMAGES_UNLICENSE/v_1_1.svg)
 
 type:
 ```python
