@@ -1,9 +1,9 @@
 # PythonLinearAlgebra
 
 ![](https://img.shields.io/badge/branch-GPL%20version-brightgreen.svg?style=flat-square)
-![](https://img.shields.io/badge/version-0.1.2_GPL-blue.svg?style=flat-square)
-![](https://img.shields.io/badge/readme-0.1.2_GPL-yellow.svg?style=flat-square)
-![](https://img.shields.io/badge/last_update-2/4/2020-violet.svg?style=flat-square)
+![](https://img.shields.io/badge/version-0.2.0_GPL-blue.svg?style=flat-square)
+![](https://img.shields.io/badge/readme-0.2.0_GPL-yellow.svg?style=flat-square)
+![](https://img.shields.io/badge/last_update-2/7/2020-violet.svg?style=flat-square)
 
 This code implements part of the algorithm in Gilbert Strang's
 Introduction to Linear Algebra, and it is completely written in Python.
@@ -17,9 +17,10 @@ go to https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/Unlicense.
 ## CATALOG
 
 1. Introduction
-2. Licence
-3. Tutorial
-4. APIs
+2. Update Log
+3. Licence
+4. Tutorial
+5. APIs
 
 ------------------------------------------------------------
 
@@ -31,6 +32,26 @@ to practice linear algebra on.
 
 This code includes most linear algebra operations as well as a basic
 interactive command line that allows users to perform computations.
+
+------------------------------------------------------------
+
+## Update Log
+
+version 0.2.0:
+
+- set positional and/or param-only arguments for serval methods.
+- performance improved on `matrix.__abs__`, `matrix.__neg__`, 
+`matrix.__eq__`.
+- Add method `matrix.factorization_U`, producing U factorization.
+- for `matrix.random_matrix` and `matrix.random_vector`, the param
+`type_: Union[type, tuple]` was replaced with params `complex_:
+bool =False` and `int_: bool = True`.
+- `matrix.__repr__`: the printed matrix will display 0 or 0.0
+instead of -0 or -0.0 .
+- Random matrix generators could be called directly (without calling
+class matrix like `matrix.xxxxx`).
+- A stronger, fast, shorter core was used for generating row-reduced
+form, computing sub-spaces, performing invert and matrix factorization.
 
 ------------------------------------------------------------
 
@@ -82,7 +103,7 @@ To install and run this software, enter the folder "Python Linear Algebra" (
 <https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/GPL/Python%20Linear%20Algebra>
 ) and download the file in python script.
 
-__NOTE: To run the script, a python3 interpreter (3.6 and above) is required.__
+__NOTE: To run the script, a python3 interpreter (3.8 and above) is required.__
 &nbsp;
 
 Also, this code could be imported by other python scripts by using:
@@ -449,7 +470,7 @@ matrix:
 
 &nbsp;
 
-10. `matrix.column_space(self, return_index: bool = False)`
+10. `matrix.column_space(self, *, return_index: bool = False)`
 
 return the column space (or the pivot column index) of the matrix.
 
@@ -481,7 +502,7 @@ type:
 
 &nbsp;
 
-11.  `matrix.row_space(self, return_index: bool = False)`
+11.  `matrix.row_space(self, *, return_index: bool = False)`
 
 return the row space (or the pivot row index) of the matrix.
 
@@ -641,7 +662,7 @@ Return the projection matrix of a given matrix, This method uses
 
 &nbsp;
 
-20. `matrix.project(self, target, to_orthogonal_space: bool = False)`
+20. `matrix.project(self, target, *, to_orthogonal_space: bool = False)`
 
 Return the projected matrix (even if you input a vector, see `vector()` 
 methods) 
@@ -739,6 +760,17 @@ For example:
 
 &nbsp;
 
+25. `matrix.factorization_U(self, *, strict: bool = False)`
+
+return the U factorization of the matrix. 
+
+- **param:** strict: to produce a strict upper-triangle matrix instead
+of upper-triangle matrix. 
+
+&nbsp;
+
+&nbsp;
+
 ------------------------------------------------------------
 
 #### The APIs under`<class 'alice.vector'>` :
@@ -826,7 +858,7 @@ Generate and return a zero matrix with size _size_ * _size_.
 
 &nbsp;
 
-3. `matrix.random_matrix(row, col, max_, min_, type_, seed)`
+3. `matrix.random_matrix(row, col, /, max_, min_, *, int_, complex_, seed)`
 
 Generate and return a random matrix with size _row_ * _col_. 
 
@@ -842,9 +874,11 @@ _Union[float, int, complex]_, default: _10_.
 - **param:** _min__: the min random value of the random matrix. type: 
 _Union[float, int, complex]_, default: _0_.
 
-- **param:** _type__: the type of the generate matrix. type:
-_Union[type, tuple]_. To generate a real matrix, use _type_, 
-otherwise use (_complex_, _type_). default: _int_.
+- **param:** _int__: whether generate a integer matrix or not. 
+type: _bool_, default: _True_.
+
+- **param:** _complex__: whether generate a complex matrix or not. 
+type: _bool_, default: _False_.
 
 - **param:** _seed_: the seed of the generator. Type: _Any_, default: 
 _None_, (random choose a seed).
@@ -867,7 +901,7 @@ matrix:
 [3, 5, 3, 9]
 
 # a floating point matrix with 6 rows and 7 columns, max: 10, min: -10
->>> print(matrix.random_matrix(6, 7, 10, -10, float))
+>>> print(matrix.random_matrix(6, 7, 10, -10, int_=False))
 matrix:
 [3.8615808488, 1.2674775011, 4.847243793, -1.0016590897, -9.4858038654, -0.8995657768, 9.3097633389]
 [-1.660605956, 8.8394380788, 9.2824632231, -8.4695465347, -6.041755394, 4.2838418496, 5.0610248363]
@@ -878,7 +912,7 @@ matrix:
 
 # a complex integer matrix with 5 rows and 5 columns, max real part: 2
 # max complex part: 3, min real part: -1, min complex part: 1 
->>> print(matrix.random_matrix(5, 5, 2+3j, -1+j, type_ =  (complex, int)))  
+>>> print(matrix.random_matrix(5, 5, 2+3j, -1+j, complex_=True, int_=False))
 matrix:
 [(1+3j), (2+2j), (1+2j), 3j, 2j]
 [(1+2j), (1+1j), (2+3j), (2+2j), (2+3j)]
@@ -904,9 +938,11 @@ _Union[float, int, complex]_, default: _10_.
 - **param:** _min__: the min random value of the random vector. type: 
 _Union[float, int, complex]_, default: _0_.
 
-- **param:** _type__: the type of the generate vector. type:
-_Union[type, tuple]_. To generate a real vector, use _type_, 
-otherwise use (_complex_, _type_). default: _int_.
+- **param:** _int__: whether generate a integer vector or not. 
+type: _bool_, default: _True_.
+
+- **param:** _complex__: whether generate a complex vector or not. 
+type: _bool_, default: _False_.
 
 - **param:** _seed_: the seed of the generator. Type: _Any_, default: 
 _None_, (random choose a seed).
