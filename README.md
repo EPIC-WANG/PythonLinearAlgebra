@@ -261,7 +261,7 @@ Type: _Union[int, float, complex]_ are supported as elements in matrix.
 
 **For example, To create:**
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_1_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_1_1.svg)
 
 , type:
 
@@ -275,7 +275,7 @@ Type: _Union[int, float, complex]_ are supported as elements in matrix.
 
 **Also, you could create a matrix with different types of element:**
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_1_2.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_1_2.svg)
 
 , type:
 ```python
@@ -285,7 +285,7 @@ Type: _Union[int, float, complex]_ are supported as elements in matrix.
 
 Or create: 
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_1_3.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_1_3.svg)
 
 , type (use j or J as complex part):
 ```python
@@ -301,7 +301,7 @@ matrix has only one row.**
 
 For example:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_1_4.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_1_4.svg)
 
 , type:
 
@@ -317,7 +317,7 @@ For example:
 
 to compute:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_1_5.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_1_5.svg)
 
 , type:
 
@@ -378,7 +378,7 @@ Return the null space of a matrix, returns a list of vector.
 
 To compute:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_6_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_6_1.svg)
 
 type:
 
@@ -408,11 +408,11 @@ matrix.
 
 to solve the equation set:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_8_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_8_1.svg)
 
 , transfer the equation set into matrix:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_8_2.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_8_2.svg)
 
 &nbsp;
 
@@ -461,7 +461,7 @@ _set_ object.
 
 to compute:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_10_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_10_1.svg)
 
 
 type:
@@ -500,7 +500,7 @@ return the transpose matrix.
 
 to compute:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_12_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_12_1.svg)
 
 type:
 ```python
@@ -523,7 +523,7 @@ _the matrix is singular. It is un invertible._ will be printed.
 
 to compute:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_13_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_13_1.svg)
 
 type:
 
@@ -547,11 +547,11 @@ the right side of the given matrix.
 
 For example, combine X and Y:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_14_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_14_1.svg)
 
 The result is:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_14_2.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_14_2.svg)
 
 type:
 
@@ -577,11 +577,11 @@ part
 
 To map X and Y:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_15_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_15_1.svg)
 
 The result is:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_15_2.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_15_2.svg)
 
 type:
 
@@ -622,11 +622,11 @@ extra columns or rows will be filled with 0.
 
 For example:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_18_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_18_1.svg)
 
 will be filled to:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_18_2.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_18_2.svg)
 
 &nbsp;
 
@@ -635,7 +635,7 @@ will be filled to:
 19. `matrix.get_projection_matrix(self)`
 
 Return the projection matrix of a given matrix, This method uses 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_19_1.svg) to produce the projection matrix. 
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_19_1.svg) to produce the projection matrix. 
 
 &nbsp;
 
@@ -653,7 +653,7 @@ orthogonal space $(I - P)$ of the target matrix.
 
 For example, to project matrix A on matrix X to get projected matrix p:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_20_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_20_1.svg)
 
 type:
 ```python
@@ -679,9 +679,9 @@ compute the linear regression equation with the data list.
 
 - **return:** _None_ (the data will be printed in the console. )
 
-For example, to compute with the data set with ![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_21_1_L.svg):
+For example, to compute with the data set with ![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_21_1_L.svg):
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/m_21_2.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/m_21_2.svg)
 
 type:
 ```python
@@ -755,7 +755,7 @@ matrix. Or, you can use a pair of square brackets to represent a vector.
 
 For example, to input X:
 
-![](https://raw.githubusercontent.com/EPIC-WANG/PythonLinearAlgebra/GPL/README_IMAGES_GPL/v_1_1.svg)
+![](https://github.com/EPIC-WANG/PythonLinearAlgebra/blob/GPL/README_IMAGES_GPL/v_1_1.svg)
 
 type:
 ```python
