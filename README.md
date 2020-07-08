@@ -2,8 +2,8 @@
 
 ![](https://img.shields.io/badge/branch-GPL%20version-brightgreen.svg?style=flat-square)
 ![](https://img.shields.io/badge/version-0.2.0_GPL-blue.svg?style=flat-square)
-![](https://img.shields.io/badge/readme-0.2.0_GPL-yellow.svg?style=flat-square)
-![](https://img.shields.io/badge/last_update-2/7/2020-violet.svg?style=flat-square)
+![](https://img.shields.io/badge/readme-0.2.0.1_GPL-yellow.svg?style=flat-square)
+![](https://img.shields.io/badge/last_update-2/12/2020-violet.svg?style=flat-square)
 
 This code implements part of the algorithm in Gilbert Strang's
 Introduction to Linear Algebra, and it is completely written in Python.
@@ -26,7 +26,7 @@ go to https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/Unlicense.
 
 ## INTRODUCTION
 
-I'm a high school student who was self-studying Linear Algebra with the
+I'm a high school student who is self-studying Linear Algebra with the
 Professor Gillbert Strang’s MIT OpenCourse. This is the code I used
 to practice linear algebra on.
 
@@ -39,19 +39,21 @@ interactive command line that allows users to perform computations.
 
 version 0.2.0:
 
-- set positional and/or param-only arguments for serval methods.
-- performance improved on `matrix.__abs__`, `matrix.__neg__`, 
+- Set positional and/or param-only arguments for serval methods.
+- Performance improved on `matrix.__abs__`, `matrix.__neg__`, 
 `matrix.__eq__`.
-- Add method `matrix.factorization_U`, producing U factorization.
-- for `matrix.random_matrix` and `matrix.random_vector`, the param
+- Add param `strict: bool` for `matrix.factorization_U`, producing more
+choices of matrix factorization.
+- For `matrix.random_matrix` and `matrix.random_vector`, the param
 `type_: Union[type, tuple]` was replaced with params `complex_:
 bool =False` and `int_: bool = True`.
 - `matrix.__repr__`: the printed matrix will display 0 or 0.0
 instead of -0 or -0.0 .
 - Random matrix generators could be called directly (without calling
 class matrix like `matrix.xxxxx`).
-- A stronger, fast, shorter core was used for generating row-reduced
-form, computing sub-spaces, performing invert and matrix factorization.
+- A stronger, faster, shorter core was used for generating row-reduced
+form, computing sub-spaces, performing invert operation and matrix
+factorization.
 
 ------------------------------------------------------------
 
@@ -99,14 +101,32 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ### 1. Install
 
-To install and run this software, enter the folder "Python Linear Algebra" (
-<https://github.com/EPIC-WANG/PythonLinearAlgebra/tree/GPL/Python%20Linear%20Algebra>
-) and download the file in python script.
+- To install and run this software, download
+[.exe version](https://github.com/EPIC-WANG/PythonLinearAlgebra/releases/download/0.2.0/alice.exe>)
+or
+[Python embedded version](https://github.com/EPIC-WANG/PythonLinearAlgebra/releases/download/0.2.0/alice.exe>)
+or
+[source code](https://github.com/EPIC-WANG/PythonLinearAlgebra/archive/0.2.0.zip).
+A basic command prompt window will appear:
 
-__NOTE: To run the script, a python3 interpreter (3.8 and above) is required.__
+```
+this is a basic compute software of linear algebra developed by Wang Weizheng
+For more information, type 'copyright()' or 'about()' in the console.
+
+
+>>>
+```
+
+__NOTE: To run the source code, a python3 interpreter (3.8 and above) is required.__
+
+
+To exit the console (if you are using the console), type exit().
+the console could accept python commands (a single line of code).
+
 &nbsp;
 
-Also, this code could be imported by other python scripts by using:
+- Also, you could download this script on PyPi by typing `pip3 install alice`
+on command prompt. Then you could import this script using:
 
 ```python
 import alice
@@ -114,16 +134,7 @@ import alice
 from alice import *
 ```
 
-or using interactive console:
-
-    this is a basic compute software of linear algebra developed by Wang Weizheng
-    For more information, type 'copyright()' or 'about()' in the console.
-
-
-    >>>
-
-To exit the console (if you are using the console), type exit().
-the console could accept python commands (a single line of code).
+&nbsp;
 
 &nbsp;
 
